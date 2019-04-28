@@ -1,0 +1,88 @@
+	body{
+			background-color: #660099;
+		}
+
+			.profilePic{
+				float: left;
+				height: 100px;
+				margin-right: 10px;
+			}
+			.repoTags{
+				
+			}
+			.btn-info{
+				background-color: #dd99ff;
+				border-color: white;
+			}
+			.btn-info:hover{
+				background-color: #c44dff;
+				text-decoration: none;
+				border-color: white;
+			}
+			.btn-info:active{
+				background-color: #c44dff;
+				text-decoration: none;
+				border-color: white;
+			}
+			.btn-info:focus{
+				background-color: #dd99ff;
+				text-decoration: none;
+				border-color: white;
+			}
+			.mw-80{
+				max-width: 80%;
+				
+			}
+			.mw-100{
+				max-width: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			.ma{
+				
+				margin: auto;
+			}
+			.mt-10{
+				margin-top: 10px;
+			}
+			.mb-10{
+				margin-bottom: 10px;
+			}
+			
+			.container,.container-fluid{
+				background-color: white;
+				border-radius: 5px;
+				padding: 7px;
+			}
+			.col-md-6{
+				padding: 15px
+			}
+			.spinner-border{
+				margin-left: 5px;
+				
+			}
+			
+			.jsonImages{
+				max-height: 400px;
+			}
+			.red{
+				color: red
+			}
+			.blue{
+				color: blue
+			}
+			nav {
+				background-color: #dd99ff; 
+				margin-bottom: 50px;
+			}
+			nav a {
+				color: white;
+			}
+			nav a:hover{
+				color: white;
+				text-shadow: 2px 2px 4px #660099;
+			}
+			audio {
+				display:none;
+			}
+			

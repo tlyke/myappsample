@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+		<link href="JS/jquery-ui.css" rel="stylesheet">
+		
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+		<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="style.css">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<script src="JS/external/jquery/jquery.js"></script>
+		<script src="JS/jquery-ui.js"></script>
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+		
+	</head>
+
+	<body>
+		<nav class = "navbar navbar-expand-sm ">
+			<a class = "navbar-brand" href = "#">
+				<img src = "lilac2.jpg" alt = "logo" style = "width:40px;">
+			</a>
+			<ul class="navbar-nav">
+				<li class = "nav-item">
+					<a class = "nav-link" href = "ajaxex.html">.ajax</a>
+				</li>
+				<li class = "nav-item">
+					<a class = "nav-link" href = "page2.html">JSON and PHP</a>
+				</li>
+				<li class = "nav-item">
+					<a class = "nav-link" href = "jvx.html">JSON vs. XML</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="container ma mw-80">
+			<h1>Display data using .ajax</h1>
+			<small>Enter a single Github username below and click the button to display the profile info via JSON</small><br>
+			<div class="input-group mt-10">
+				<input id="username" type="text" class="form-control" name="username" placeholder="Username"><input type="button" class="btn btn-info  " id="submitUsername" value="Pull User Data">
+				<div id="spinner" class="text-secondary"></div>
+				</div>
+				<br>
+				<!--containers for user info-->
+				<div class='mw-100 container' id="bio"></div><br><br>
+				<div class='mw-100 container' id="repos"></div>
+		</div>
+		<script>
+			//sets up spinner and gets username to display user info
+			$("#submitUsername").click(function(){
+				$("#spinner").addClass("spinner-border");
+				var username = $("#username").val();
+				displayUserInfo(username);
+				
+			});
+			//gets user's info for the bio and displays it with the displayRepoList() function
+			function displayUserInfo(username){
+				$.ajax({url: "https://api.github.com/users/"+username, 
+					dateType: 'json',
+					success: function(userInfo){
+						var bio = "<h3>"+userInfo.name+"<small> (@"+userInfo.login+")<small></h3><p><img class='img-thumbnail profilePic' src='" +userInfo.avatar_url+"'> Followers: "+userInfo.followers+" - Following: "+userInfo.following+"<br> Repos: "+ userInfo.public_repos+"</p>";
+						displayRepoList(username,bio);
+					},
+					error: function(){
+						alert("Error fetching Bio");
+						$("#spinner").removeClass("spinner-border");
+					}
+				});
+			}
+			//gets user's repos and displays bio and repo info with the displayInfo() function
+			function displayRepoList(username, bio){
+				$.ajax({url: "https://api.github.com/users/"+username+"/repos", 
+					dateType: 'json',
+					success: function(repoList){
+						var repoListDisplay = "<p>Repo List:<br>";
+						for(var i = 0; i < repoList.length; i++){
+							repoListDisplay += "<a class='repoTags' href='"+repoList[i].html_url+"'><button class='btn btn-info'>"+repoList[i].name+"</button></a>"
+						}
+						repoList += "</p>";
+						displayInfo(bio, repoListDisplay)
+					},
+					error: function(){
+						alert("Error fetching repos");
+						$("#spinner").removeClass("spinner-border");
+					}
+				});
+			}
+			//displays users info
+			function displayInfo(bio, repoListDisplay){
+				$("#bio").html(bio);
+				$("#repos").html(repoListDisplay);
+				$("#spinner").removeClass("spinner-border");
+			}
+			//autocompletes for text input with users from the webserver
+			$( function() {
+				var usernames = [];
+				$.ajax({url: "https://api.github.com/users", 
+					dateType: 'json',
+					success: function(usersList){
+						for(var i = 0; i < usersList.length; i++){
+							usernames.push(usersList[i].login);
+						}
+					},
+					error: function(){
+						alert("error");
+					}
+				});
+				$("#username").autocomplete({
+					source: usernames
+				});
+			});
+		</script>
+	</body>
+</html>

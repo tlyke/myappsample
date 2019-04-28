@@ -1,0 +1,27 @@
+{
+    "result": {
+        "title": "Difference between JSON and XML",
+		"posts": [
+            {
+                "title": "Which one is better?",
+				"img": "https://media1.tenor.com/images/c553653bce274cd821b67c6412756c3e/tenor.gif?itemid=12229648",
+				"link": "https://www.json.org/xml.html"
+            },
+            {
+                "title": "JSON to PHP using json_decode",
+				"img": "https://media0.giphy.com/media/3s94iYH5Qbl0BWYr4r/source.gif",
+				"link": "http://www.dyn-web.com/tutorials/php-js/json/decode.php"
+            },
+            {
+                "title": "JSON with PHP and JavaScript",
+                "img": "https://i.pinimg.com/originals/43/95/44/439544054d53ba59998575bbf129a5ae.gif",
+                "link": "https://jonsuh.com/blog/convert-loop-through-json-php-javascript-arrays-objects/"
+            },
+            {
+                "title": "Using jQuery.ajax() to retrieve JSON data",
+                "img": "https://avatars.mds.yandex.net/get-pdb/964102/2425ad52-6726-4b0e-94e8-317e93b08c36/orig",
+                "link": "https://www.carnaghan.com/2016/10/using-jquery-ajax-to-retrieve-sample-json-data/"
+            }
+        ]
+    }
+}

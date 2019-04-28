@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--Source: w3schools.com, https://stackoverflow.com/questions/19616717/how-to-change-font-color-inside-nav-element-->
+<html lang = "en">
+<head>
+
+<title> JSON vs XML </title>
+
+<meta charset = "utf-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1">
+<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> </script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> </script>
+
+</head>
+<body>
+<nav class = "navbar navbar-expand-sm">
+<a class = "navbar-brand" href = "#">
+<img src = "lilac2.jpg" alt = "logo" style = "width:40px;">
+</a>
+<ul class="navbar-nav">
+<li class = "nav-item">
+<a class = "nav-link" href = "ajaxex.html">.ajax</a>
+</li>
+<li class = "nav-item">
+<a class = "nav-link" href = "page2.html">JSON and PHP</a>
+</li>
+<li class = "nav-item">
+<a class = "nav-link" href = "jvx.html">JSON vs. XML</a>
+</li>
+</ul>
+</nav>
+<div class = "container">
+	<div class = "row">
+		<div class ="col-md-6">
+			<blockquote class = "blockquote"> 
+				<h4> <abbr title = "JavaScript Object Notation"> JSON </abbr> is Like <abbr title = "eXtensible Markup Language"> XML </abbr> Because </h4>
+					<ul>
+						<li> Both JSON and XML are "self describing" (human readable) </li>
+						<li> Both JSON and XML are hierarchical (values within values) </li>
+						<li> Both JSON and XML can be parsed and used by lots of programming languages </li>
+						<li> Both JSON and XML can be fetched with an XMLHttpRequest </li>
+					</ul>
+				<h4><abbr title = "JavaScript Object Notation"> JSON </abbr>  is Unlike <abbr title = "eXtensible Markup Language"> XML </abbr> Because </h4>
+					<ul>
+						<li> JSON doesn't use end tag </li>
+						<li> JSON is shorter </li>
+						<li> JSON is quicker to read and write </li>
+						<li> JSON can use arrays </li>
+					</ul>
+			<footer class = "blockquote-footer"> 
+				<a href = "https://www.w3schools.com/js/js_json_xml.asp"> w3schools </a>
+			</footer>
+			</blockquote>
+		</div>
+		
+		<div class = "col-md-6">
+			<img src = "table.png" alt = "table">
+		</div>
+	</div>
+	<div class = "row">
+		<div class = "col-md-8">
+			<pre class = "well">
+{"groupMembers": [
+	{ "name" : "Eden", "grade" : 12, "age" : 17, "color" : "dark purple"}, 
+	{ "name" : "Porter", "grade" : 12, "age" : 18, "color" : "lavender"}, 
+	{ "name" : "Trenton", "grade" : 11, "age" : 16, "color" white"}
+]}
+			</pre>
+			<h2> As you can see above the JSON example is much more compact, condensed, and easier to write than XML
+			example. However, both forms of data are human-readable.
+			</h2>
+		</div>
+		<div class = "col-md-4">
+			<xmp>
+<group>
+	<member>
+		<name>Eden</name>
+		<grade>12</12>
+		<age>17</age>
+		<color>dark purp</color>
+	</member>
+	<member>
+		<name>E. Porter</name>
+		<grade>12</grade>
+			<age>18</age>
+		<color>lavender</color>
+	</member>
+	<member>
+		<name>Trenton </name>
+		<grade>11</grade>
+		<age>16</age>
+		<color>white</color>
+	</member>
+</group>
+</xmp>
+		</div>
+	</div>
+</div>
+</body>
+</html>
