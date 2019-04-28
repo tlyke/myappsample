@@ -10,7 +10,7 @@ var fs = require('fs');
 
 var faker = require('faker');
 
-
+console.log("hi")
 
 //creates express object 
 var app = express();
